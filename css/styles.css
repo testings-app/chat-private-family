@@ -1,0 +1,186 @@
+body {
+    background-color: #282c34;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-left: 10px;
+}
+
+nav button {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+main {
+    width: 80%;
+}
+
+main .app {
+    position: relative;
+    width: 100%;
+    /* padding: 5px; */
+    height: 100vh;
+    float: right;
+    overflow: hidden;
+    overflow: auto;
+    border-left: 0.1px solid rgba(255, 255, 255, 0.233);
+    margin: 0px auto;
+    border-radius: 3px;
+    background: #191b1f;
+}
+
+main .app::-webkit-scrollbar {
+    background-color: black;
+    width: 7px;
+}
+
+main .app::-webkit-scrollbar-thumb {
+    background-color: rgb(41, 40, 41);
+    width: 7px;
+}
+
+.input button img {
+    width: 60px;
+}
+
+.input {
+    position: fixed;
+    background-color: #15171a;
+    bottom: 0;
+    width: 100%;
+}
+
+.input button {
+    border: none;
+    background: none;
+    border-radius: 0px;
+}
+
+.input #chat {
+    width: 95%;
+    margin: auto;
+    border-radius: 0px;
+    position: relative;
+    cursor: text;
+    border-radius: 200px;
+    text-align: left;
+}
+
+.pad {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.left {
+    width: 20%;
+}
+
+.btn-user {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #191b1f;
+    padding: 15px;
+    width: 100%;
+    top: 0;
+}
+
+.usuert {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    position: relative;
+    top: 10px;
+    color: white;
+}
+
+#btn__google img {
+    width: 20px;
+}
+
+.reinit {
+    background: none;
+    position: absolute;
+    right: 0;
+}
+
+#image-user,
+.img-chat-user {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: none;
+}
+
+.name {
+    position: relative;
+    left: 3px;
+}
+
+@media screen and (max-width:1134px) {
+    .input button img {
+        width: 50px;
+    }
+    .input #chat {
+        width: 85%;
+    }
+    .pad {
+        flex-direction: column-reverse;
+    }
+    main {
+        width: 100%;
+    }
+    .left {
+        width: 100%;
+    }
+    .btn-user {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.267);
+    }
+}
+
+.content-enviar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nombre-de-friend {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #15171a;
+    padding: 15px;
+    height: 67px;
+}
+
+.messege {
+    color: white;
+    /* background-color: white; */
+}
+
+.chat-global {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+}
