@@ -134,7 +134,7 @@ main .app::-webkit-scrollbar-thumb {
 
 .name {
     position: relative;
-    left: 3.1px;
+    left: 3px;
 }
 
 @media screen and (max-width:1134px) {
