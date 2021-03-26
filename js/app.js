@@ -3,9 +3,7 @@ const buttons = document.getElementById('botones')
 const main = document.getElementById('main')
 const btnUser = document.getElementById('btn-user')
 const usuert = document.getElementById('usuert')
-const app = document.getElementById('app');
-
-function global() {}
+const app = document.getElementById('app')
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -35,12 +33,17 @@ firebase.auth().onAuthStateChanged((user) => {
                     if (doc.data().uid === user.uid) {
                         chatGolbal.innerHTML += `<br><img class="img-chat-user" src="${user.photoURL}" alt=""> <p class="messege badge bg-light text-dark">${doc.data().Mensaje}</p>`;
                     } else {
-                        chatGolbal.innerHTML += `<br><p class="messege badge bg-primary text-light">${doc.data().Mensaje}</p>`;
+                        chatGolbal.innerHTML += `<div class="gas"><br><p class="gas messege badge bg-primary text-light">${displayName} ${doc.data().Mensaje}</p><div>`;
 
                     }
                 });
             });
         }
+
+
+
+
+
         const fire = firebase.firestore()
 
         function chat() {
@@ -49,11 +52,17 @@ firebase.auth().onAuthStateChanged((user) => {
                 const chatInput = document.getElementById('chat').value
                 e.preventDefault()
                 console.log(chatInput)
-                    // ======================> Creacion de el mensaje  <====================== 
+
+                // ======================> Creacion de el mensaje  <====================== 
                 fire.collection('Mensseger').doc().set({
                     Mensaje: `${chatInput}`,
                     fecha: Date.now(),
                     uid: user.uid
+                }).then(() => {
+                    let chatInputs = document.getElementById('chat').value = ""
+                    console.log('exito')
+                }).catch((error) => {
+                    console.log(error)
                 })
 
 
@@ -64,10 +73,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 
 
-
         recorrer()
-
-
         chat()
         let photoURL = user.photoURL;
         let displayName = user.displayName;
@@ -75,9 +81,6 @@ firebase.auth().onAuthStateChanged((user) => {
         cerrarSesion();
         // chat()
         btnUser.classList.remove('reinit')
-
-
-
     } else {
         btnUser.classList.add('reinit')
         buttons.innerHTML = `<button id="btn__google" class="btn btn-light"><img src="https://www.flaticon.com/svg/vstatic/svg/2702/2702602.svg?token=exp=1616708011~hmac=e81a648543728c0cb62bb0e9aefe2a34" alt=""> Google</button>      `
