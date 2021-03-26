@@ -29,7 +29,7 @@ nav button {
 }
 
 main {
-    width: 70%;
+    width: 80%;
 }
 
 main .app {
@@ -61,9 +61,9 @@ main .app::-webkit-scrollbar-thumb {
 }
 
 .input {
-    position: fixed;
+    position: sticky;
+    top: 100%;
     background-color: #15171a;
-    bottom: 0;
     width: 100%;
 }
 
@@ -74,7 +74,7 @@ main .app::-webkit-scrollbar-thumb {
 }
 
 .input #chat {
-    width: 95%;
+    width: 93%;
     margin: auto;
     border-radius: 0px;
     position: relative;
@@ -89,7 +89,7 @@ main .app::-webkit-scrollbar-thumb {
 }
 
 .left {
-    width: 30%;
+    width: 23.4%;
 }
 
 .btn-user {
@@ -183,4 +183,12 @@ main .app::-webkit-scrollbar-thumb {
     margin-left: 20px;
     margin-top: 10px;
     font-size: 18px;
+}
+
+.gas {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    right: 10px;
+    top: 5px;
 }
