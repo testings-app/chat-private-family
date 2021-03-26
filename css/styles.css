@@ -29,7 +29,7 @@ nav button {
 }
 
 main {
-    width: 65%;
+    width: 70%;
 }
 
 main .app {
@@ -89,7 +89,7 @@ main .app::-webkit-scrollbar-thumb {
 }
 
 .left {
-    width: 25%;
+    width: 30%;
 }
 
 .btn-user {
