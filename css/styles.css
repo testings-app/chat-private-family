@@ -99,6 +99,7 @@ main .app::-webkit-scrollbar-thumb {
     justify-content: space-between;
     background-color: #191b1f;
     padding: 15px;
+    position: sticky;
     width: 100%;
     top: 0;
 }
@@ -138,11 +139,18 @@ main .app::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width:1134px) {
+    .alert-div .alert-gmail {
+        color: rgb(170, 170, 170);
+        font-size: 16px;
+    }
+    .alert-div .alert-name {
+        font-size: 16px;
+    }
     .input button img {
         width: 50px;
     }
     .input #chat {
-        width: 85%;
+        width: 100%;
     }
     .pad {
         flex-direction: column-reverse;
@@ -154,6 +162,7 @@ main .app::-webkit-scrollbar-thumb {
         width: 100%;
     }
     .btn-user {
+        position: fixed;
         border-bottom: 1px solid rgba(128, 128, 128, 0.267);
     }
 }
@@ -174,21 +183,59 @@ main .app::-webkit-scrollbar-thumb {
     height: 67px;
 }
 
-.messege {
-    color: white;
-    /* background-color: white; */
-}
-
 .chat-global {
     margin-left: 20px;
     margin-top: 10px;
     font-size: 18px;
 }
 
-.gas {
+.nombre-de-friend {
     display: flex;
+    width: 100%;
     justify-content: flex-end;
+}
+
+.nombre-de-friend h1 {
+    color: white;
+}
+
+.ambos {
+    display: flex;
+    width: 95%;
+    max-width: 1000;
+    align-items: center;
+}
+
+.ambos p {
+    color: black;
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
     position: relative;
-    right: 10px;
-    top: 5px;
+    top: 10px;
+    left: 5px;
+}
+
+.ambos .p-f {
+    background-color: #373750;
+    color: white;
+}
+
+.alert-div {
+    text-align: left;
+}
+
+.alert-div p {
+    color: rgb(170, 170, 170);
+    font-size: 23px;
+}
+
+.alert-div .alert-gmail {
+    bottom: 25px;
+    position: relative;
+}
+
+.img-chat-user {
+    cursor: pointer;
 }
