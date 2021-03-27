@@ -33,7 +33,7 @@ firebase.auth().onAuthStateChanged((user) => {
             </div>`
 
         function recorrer() {
-            fire.collection('Mensseger').orderBy('fecha').onSnapshot((obtenerMensseger) => {
+            fire.collection('Mensseger-famaly').orderBy('fecha').onSnapshot((obtenerMensseger) => {
                 let chatGolbal = document.getElementById('chat-gobal')
                 chatGolbal.innerHTML = ""
                 obtenerMensseger.forEach(doc => {
@@ -69,7 +69,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 e.preventDefault()
                     // ======================> Creacion de el mensaje  <====================== 
                 if (chatInput == 0) {} else {
-                    fire.collection('Mensseger').doc().set({
+                    fire.collection('Mensseger-famaly').doc().set({
                         Mensaje: `${chatInput}`,
                         fecha: Date.now(),
                         uid: user.uid,
