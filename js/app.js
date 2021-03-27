@@ -13,14 +13,10 @@ function bodyScroll() {
 function appscroll() {
     const apps = document.getElementById('app')
     apps.scrollTop = apps.scrollHeight
-
 }
-
-
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         buttons.innerHTML = `<button id="salir" class="btn btn-danger">Cerrar Sesion</button>        `
-
         var uid = user.uid;
         main.innerHTML = /*html*/ ` \
           <div class="app" id="app">
@@ -35,9 +31,6 @@ firebase.auth().onAuthStateChanged((user) => {
                     </div>
                 </form>
             </div>`
-
-
-
 
         function recorrer() {
             fire.collection('Mensseger').orderBy('fecha').onSnapshot((obtenerMensseger) => {
@@ -61,14 +54,11 @@ firebase.auth().onAuthStateChanged((user) => {
                             });
                         }
                     }
-
                     imgF()
-
                     bodyScroll()
                     appscroll()
                 });
             });
-
         }
         const fire = firebase.firestore()
 
@@ -106,12 +96,11 @@ firebase.auth().onAuthStateChanged((user) => {
         btnUser.classList.remove('reinit')
     } else {
         btnUser.classList.add('reinit')
-        buttons.innerHTML = `<button id="btn__google" class="btn btn-light"><img src="./img/google.png" alt=""> Google</button>      `
+        buttons.innerHTML = `<button id="btn__google" class="btn btn-light"><img src="./img/google.png" alt=""> Google</button>  <button id="btn__facebook" class="btn btn-light"><img src="./img/facebook.png" width="20" alt=""> Facebook</button>`
         googgle();
+        facebook()
     }
 });
-
-
 
 function googgle() {
     const btn__google = document.getElementById('btn__google')
@@ -120,6 +109,17 @@ function googgle() {
         firebase.auth().signInWithPopup(provider)
     });
 }
+
+
+
+function facebook() {
+    const btn__facebook = document.getElementById('btn__facebook')
+    btn__facebook.addEventListener('click', () => {
+        var provider = new firebase.auth.FacebookAuthProvider();
+        firebase.auth().signInWithPopup(provider)
+    });
+}
+
 
 function cerrarSesion() {
     let salir = document.getElementById('salir')
@@ -132,6 +132,3 @@ function cerrarSesion() {
         })
     });
 }
-
-
-// let chatGolbalClass = document.querySelector('.chat-global')
