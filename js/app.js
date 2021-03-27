@@ -21,7 +21,7 @@ firebase.auth().onAuthStateChanged((user) => {
         main.innerHTML = /*html*/ ` \
           <div class="app" id="app">
               <div class="nombre-de-friend">
-                  <h1>Nombre de el grupo</h1>
+                  <h1>PorlarChat💬</h1>
               </div>
                 <div class="chat-global" id="chat-gobal"></div>
               <form class="input" id="form">
@@ -33,21 +33,21 @@ firebase.auth().onAuthStateChanged((user) => {
             </div>`
 
         function recorrer() {
-            fire.collection('Mensseger-famaly').orderBy('fecha').onSnapshot((obtenerMensseger) => {
+            fire.collection('Mensseger').orderBy('fecha').onSnapshot((obtenerMensseger) => {
                 let chatGolbal = document.getElementById('chat-gobal')
                 chatGolbal.innerHTML = ""
                 obtenerMensseger.forEach(doc => {
                     // console.log(doc.data().Mensaje);
                     if (doc.data().uid === user.uid) {
-                        chatGolbal.innerHTML += `<div class="ambos"><img title="Tu" class="img-chat-user" src="${user.photoURL}" alt=""> <p class="messege">${doc.data().Mensaje}</p></div>`;
+                        chatGolbal.innerHTML += `<div class="ambos ambos-left"><img title="Tu" class="img-chat-user" src="${user.photoURL}" alt=""> <p class="messege">${doc.data().Mensaje}</p></div>`;
                     } else {
-                        chatGolbal.innerHTML += `<div class="ambos fire"><br> <img title="${doc.data().name}" class="img-chat-user img-chat-f-f" onclick="imgChatFf('${doc.data().name}','${doc.data().email}')" src="${doc.data().image}" alt=""> <p class="p-f">${doc.data().Mensaje}</p></div>`;
+                        chatGolbal.innerHTML += `<div class="ambos fire"><br> <img title="${doc.data().name}" class="img-chat-user img-chat-f-f" onclick="imgChatFf('${doc.data().name}','${doc.data().image}')" src="${doc.data().image}" alt=""> <p class="p-f">${doc.data().Mensaje}</p></div>`;
                     }
 
                     function imgF() {
-                        imgChatFf = function(name, email) {
+                        imgChatFf = function(name, image) {
                             Swal.fire({
-                                html: `<div class="alert-div"> <p class="alert-name">Nombre: <b>${name}</b></p> <br> <p class="alert-gmail">Gmail: <b>${email}</b></p></div>`,
+                                html: `<div class="alert-div"> <p class="alert-name">Nombre: <b>${name}</b></p> <img class="alert-image" src="${image}" alt="">`,
                                 showConfirmButton: false,
                                 background: "#080808",
                                 showCloseButton: true
@@ -69,7 +69,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 e.preventDefault()
                     // ======================> Creacion de el mensaje  <====================== 
                 if (chatInput == 0) {} else {
-                    fire.collection('Mensseger-famaly').doc().set({
+                    fire.collection('Mensseger').doc().set({
                         Mensaje: `${chatInput}`,
                         fecha: Date.now(),
                         uid: user.uid,
