@@ -21,7 +21,7 @@ firebase.auth().onAuthStateChanged((user) => {
         main.innerHTML = /*html*/ ` \
           <div class="app" id="app">
               <div class="nombre-de-friend">
-                  <h1>ChatGrupal💬</h1>
+                  <h1>Chat💬</h1>
               </div>
                 <div class="chat-global" id="chat-gobal"></div>
               <form class="input" id="form">

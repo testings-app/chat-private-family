@@ -218,10 +218,10 @@ main .app::-webkit-scrollbar-thumb {
     height: 45px;
 }
 
-
-/* .ambos-left {
-    background-color: red;
-} */
+.ambos-left p {
+    font-size: 17px;
+    padding: 8px;
+}
 
 
 /* ======================> contenedor main  <====================== */
@@ -251,6 +251,7 @@ main .app::-webkit-scrollbar-thumb {
     }
     .btn-user {
         position: fixed;
+        background: #212e41;
         border-bottom: 1px solid rgba(128, 128, 128, 0.267);
     }
     .pad h1 {
